@@ -11,10 +11,21 @@ container.addEventListener("click", function (event) {
   container.style.background = "blue";
 });
 
-//first ex to show event.preventDefault()
+// legitcomment --- first ex to show event.preventDefault()
+// legitcommment --- in this way, variable (linkHandler) was declared to hold the function!!!!!
+
+// let link = document.querySelector("a");
+// const linkHandler = function (event) {
+//   event.preventDefault();
+//   link.innerText = "Action Prevented";
+// };
+// link.addEventListener("click", linkHandler);
+
+// legitcomment --- this is the example in powerpoint slide 14
+// legitcomment --- in this way, the function is directly assigned as the event handler
+
 let link = document.querySelector("a");
-const linkHandler = function (event) {
+link.addEventListener("click", (event) => {
+  link.innerText = "Action Prevented!";
   event.preventDefault();
-  link.innerText = "Action Prevented";
-};
-link.addEventListener("click", linkHandler);
+});
